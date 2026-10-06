@@ -1,0 +1,191 @@
+/* ==========================================================
+   1. Design tokens
+   ========================================================== */
+:root {
+  /* Colors */
+  --primary-accent: #FFB400;
+  --bg-page: #F7F8FA;
+  --bg-card: #FFFFFF;
+  --text-primary: #2B2B2B;
+  --text-muted: #767676;
+  --input-bg: #E8EAEF;
+
+  /* Layout & Spacing */
+  --content-max-width: 1140px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+  --radius-round: 50%;
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.05);
+  --gutter: 24px;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+/* ==========================================================
+   2. Base
+   ========================================================== */
+body {
+  font-family: var(--font-family);
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   3. Navigation bar
+   ========================================================== */
+.site-header {
+  position: relative;
+  padding-block: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--text-primary);
+  background-color: var(--primary-accent);
+  font-weight: var(--fw-semibold);
+}
+
+/* Mobile toggle: hidden on desktop */
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-toggle-bars {
+  position: relative;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-bars::before { top: -7px; }
+.nav-toggle-bars::after  { top: 7px; }
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars {
+  background-color: transparent;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================
+   4. Responsive
+   ========================================================== */
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: var(--gutter);
+    right: var(--gutter);
+    z-index: 10;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  }
+
+  .nav-list.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 16px;
+  }
+}
