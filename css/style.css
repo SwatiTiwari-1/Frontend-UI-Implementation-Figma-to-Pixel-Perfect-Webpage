@@ -267,3 +267,138 @@ body {
     margin: 48px auto 0;
   }
 }
+
+/* ===== Shared section layout ===== */
+.section-container {
+  width: min(1244px, 100% - 48px); /* 98px side margins at 1440px */
+  margin-inline: auto;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  max-width: 620px;
+  margin: 12px auto 0;
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--text-muted);
+}
+
+/* ===== Projects ===== */
+.projects {
+  padding-top: 62px; /* hero bottom -> heading */
+}
+
+.projects .section-header {
+  margin-bottom: 44px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* clips the image to the card's rounded top corners */
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-card-image {
+  display: block;
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+  background-color: var(--input-bg); /* visible until the image loads */
+}
+
+.project-card-body {
+  padding: 16px;
+}
+
+.project-card-title {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-primary);
+}
+
+/* Truncate the description to 2 lines */
+.project-card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-muted);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
+.tag {
+  padding: 5px 14px;
+  border: 1px solid var(--input-bg);
+  border-radius: 999px;
+  background-color: var(--bg-page);
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none; }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .projects {
+    padding-top: 48px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-image {
+    height: 220px;
+  }
+}
