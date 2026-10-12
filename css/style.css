@@ -402,3 +402,127 @@ body {
     height: 220px;
   }
 }
+ 
+/* ===== Recommendations ===== */
+.recommendations {
+  padding-top: 62px; /* cards -> heading */
+}
+ 
+/* This section's heading/subtitle spacing is tighter in the design */
+.recommendations .section-subtitle {
+  margin-top: 5px;
+  line-height: 24px;
+}
+ 
+/* Carousel viewport: clips the track so neighbouring slides peek in at both edges */
+.reviews {
+  margin-top: 44px;
+  overflow: hidden;
+  background-color: var(--b g-card);
+}
+ 
+.reviews-track {
+  display: flex;
+  gap: 24px;
+}
+ 
+.reviews-track.is-ready {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+ 
+.review {
+  flex: 0 0 min(341px, 100vw - 96px);
+  padding: 24px 27px 25px;
+}
+ 
+/* 5 gold stars drawn with a repeating SVG tile (30px pitch) */
+.review-stars {
+  width: 150px;
+  height: 22px;
+  margin-bottom: 13px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 22'%3E%3Cpolygon fill='%23FFB400' points='11,1 13.59,7.94 20.99,8.25 15.18,12.86 17.17,20 11,15.9 4.83,20 6.82,12.86 1.01,8.25 8.41,7.94'/%3E%3C/svg%3E") repeat-x 0 0 / 30px 22px;
+}
+ 
+.review-title {
+  margin-bottom: 17px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-primary);
+}
+ 
+.review-text {
+  margin-bottom: 26px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-muted);
+}
+ 
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+ 
+.review-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-round);
+  object-fit: cover;
+  background-color: var(--input-bg);
+}
+ 
+.review-name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-primary);
+}
+ 
+.review-role {
+  margin-top: 3px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-muted);
+}
+ 
+/* Pagination dots: 10px dot inside a 20px tap target */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+ 
+.slider-dot {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: var(--radius-round);
+  background-color: var(--primary-accent);
+  background-clip: content-box;
+  opacity: 0.5;
+  transition: opacity 0.25s ease;
+}
+ 
+.slider-dot:hover {
+  opacity: 0.8;
+}
+ 
+.slider-dot.active {
+  opacity: 1;
+}
+ 
+.slider-dot:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 1px;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track.is-ready,
+  .slider-dot {
+    transition: none;
+  }
+}
+ 
+ 
