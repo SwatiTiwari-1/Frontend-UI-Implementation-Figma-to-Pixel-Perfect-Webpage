@@ -85,3 +85,76 @@
   updateSlide(currentIndex);
   requestAnimationFrame(() => track.classList.add('is-ready'));
 })();
+
+/* ==========================================================
+   Contact form: validation + simulated submit
+   ========================================================== */
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const status = document.getElementById('formStatus');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const setError = (input, message) => {
+    const error = document.getElementById(`${input.id}-error`);
+    error.textContent = message;
+    error.hidden = false;
+    input.setAttribute('aria-invalid', 'true');
+    input.setAttribute('aria-describedby', error.id);
+  };
+
+  const clearError = (input) => {
+    const error = document.getElementById(`${input.id}-error`);
+    error.textContent = '';
+    error.hidden = true;
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+  };
+
+  // Returns true when the field is valid
+  const validate = (input) => {
+    const value = input.value.trim();
+
+    if (input.required && !value) {
+      setError(input, 'This field is required.');
+      return false;
+    }
+    if (input.type === 'email' && value && !emailPattern.test(value)) {
+      setError(input, 'Please enter a valid email address.');
+      return false;
+    }
+    clearError(input);
+    return true;
+  };
+
+  // Clear an error as soon as the user starts fixing it
+  form.addEventListener('input', (e) => {
+    if (e.target.hasAttribute('aria-invalid')) validate(e.target);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    status.textContent = '';
+
+    const fields = [...form.querySelectorAll('input, textarea')];
+    const invalid = fields.filter((field) => !validate(field));
+
+    if (invalid.length) {
+      invalid[0].focus();
+      return;
+    }
+
+    // Simulated submission feedback
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'SENDING...';
+
+    setTimeout(() => {
+      form.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'SEND MESSAGE';
+      status.textContent = 'Message received! Thank you for getting in touch.';
+    }, 1000);
+  });
+})();
