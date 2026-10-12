@@ -190,7 +190,6 @@ body {
   width: 22px;
   height: 22px;
   pointer-events: none;
-  animation: float-a 6s ease-in-out infinite;
 }
 
 .shape-ring {
@@ -210,29 +209,15 @@ body {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18' fill='none' stroke='%23FF5A3C' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M10 2L18.5 16.5H1.5Z'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
-.shape-ring--yellow-tl    { left: 4%;    top: 6.4%;  animation-name: float-b; animation-duration: 7s;   animation-delay: -2s; }
-.shape-ring--green-top    { left: 51.6%; top: 11.1%; border-color: var(--shape-green); animation-duration: 5.5s; animation-delay: -1s; }
-.shape-diamond--yellow    { left: 89%;   top: 15.4%; animation-name: float-c; animation-duration: 6.5s; animation-delay: -3s; }
-.shape-diamond--blue      { left: 37.4%; top: 71.7%; border-color: var(--shape-blue); rotate: -30deg; animation-name: float-b; animation-duration: 8s; animation-delay: -4s; }
-.shape-ring--green-bl     { left: 8.75%; top: 90.5%; border-color: var(--shape-green); animation-name: float-c; animation-duration: 7.5s; animation-delay: -5s; }
-.shape-ring--yellow-knee  { left: 55.3%; top: 81.4%; animation-duration: 5s; animation-delay: -1.5s; }
-.shape-triangle           { left: 91.5%; top: 91.6%; animation-name: float-b; animation-duration: 6s; animation-delay: -2.5s; }
-
-@keyframes float-a {
-  0%, 100% { translate: 0 0; }
-  50%      { translate: 0 -12px; }
-}
-@keyframes float-b {
-  0%, 100% { translate: 0 0; }
-  50%      { translate: 8px 10px; }
-}
-@keyframes float-c {
-  0%, 100% { translate: 0 0; }
-  50%      { translate: -8px -8px; }
-}
+.shape-ring--yellow-tl    { left: 4%;    top: 6.4%; }
+.shape-ring--green-top    { left: 51.6%; top: 11.1%; border-color: var(--shape-green); }
+.shape-diamond--yellow    { left: 89%;   top: 15.4%; }
+.shape-diamond--blue      { left: 37.4%; top: 71.7%; border-color: var(--shape-blue); rotate: -30deg; }
+.shape-ring--green-bl     { left: 8.75%; top: 90.5%; border-color: var(--shape-green); }
+.shape-ring--yellow-knee  { left: 55.3%; top: 81.4%; }
+.shape-triangle           { left: 91.5%; top: 91.6%; }
 
 @media (prefers-reduced-motion: reduce) {
-  .shape { animation: none; }
   .btn-hire { transition: none; }
 }
 
