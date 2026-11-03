@@ -481,7 +481,7 @@ body {
 .slider-dots {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 42px;
 }
  
 .slider-dot {
@@ -525,7 +525,7 @@ body {
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 846fr) minmax(0, 372fr);
-  column-gap: 26px;
+  column-gap: 25px;
 }
 
 .contact-col {
@@ -542,7 +542,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  padding: 25px 36px 24px 37px;
+  padding: 25px 36px 25px 36px;
   background-color: var(--bg-card);
 }
 
