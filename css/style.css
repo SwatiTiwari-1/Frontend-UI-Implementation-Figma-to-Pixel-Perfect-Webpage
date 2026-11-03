@@ -24,6 +24,7 @@
 
 /* ===== Base ===== */
 body {
+  width: 1440px;
   font-family: var(--font-family);
   color: var(--text-primary);
   background-color: var(--bg-page);
@@ -32,7 +33,7 @@ body {
 /* ===== Header / Navbar ===== */
 .header {
   height: 152px;
-  padding: 0 84px 0 98px;
+  padding: 38px 96px;
   background-color: var(--bg-card);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
@@ -45,23 +46,21 @@ body {
 }
 
 .nav-logo img {
-  width: 152px;
-  height: 62px;
+  width: 158px;
+  height: 76px;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 43px;
 }
 
 .nav-link {
   display: block;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm); /* 6px */
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0.022em;
   color: #000000;
   transition: color 0.25s ease, background-color 0.25s ease;
 }
@@ -72,8 +71,9 @@ body {
 
 /* Active page: yellow pill */
 .nav-link.active {
+  border-radius: var(--radius-sm); /* 6px */
+  padding: 8px 14px;
   background-color: var(--primary-accent);
-  margin-right: 13px; /* extra space after Home, as in the design */
 }
 
 /* Visible keyboard focus */
@@ -151,7 +151,7 @@ body {
   align-items: center;
   gap: 11px;
   height: 51px;
-  padding: 0 33px;
+  padding: 0 32px;
   border-radius: var(--radius-sm);
   background-color: var(--primary-accent);
   font-size: 16px;
@@ -212,7 +212,7 @@ body {
 .shape-ring--yellow-tl    { left: 4%;    top: 6.4%; }
 .shape-ring--green-top    { left: 51.6%; top: 11.1%; border-color: var(--shape-green); }
 .shape-diamond--yellow    { left: 89%;   top: 15.4%; }
-.shape-diamond--blue      { left: 37.4%; top: 71.7%; border-color: var(--shape-blue); rotate: -30deg; }
+.shape-diamond--blue      { left: 37.4%; top: 71.7%; border-color: var(--shape-blue);}
 .shape-ring--green-bl     { left: 8.75%; top: 90.5%; border-color: var(--shape-green); }
 .shape-ring--yellow-knee  { left: 55.3%; top: 81.4%; }
 .shape-triangle           { left: 91.5%; top: 91.6%; }
@@ -272,7 +272,7 @@ body {
 
 .section-subtitle {
   max-width: 620px;
-  margin: 12px auto 0;
+  margin: 11px auto 0;
   font-size: 15px;
   line-height: 25px;
   color: var(--text-muted);
@@ -317,11 +317,13 @@ body {
 }
 
 .project-card-body {
-  padding: 16px;
+  padding: 14px 16px;
+  margin-bottom: 6px;
 }
 
 .project-card-title {
-  margin-bottom: 4px;
+  letter-spacing: 0;
+  margin-bottom: 1.5px;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -330,12 +332,13 @@ body {
 
 /* Truncate the description to 2 lines */
 .project-card-text {
+  letter-spacing: 0.006em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   overflow: hidden;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-size: 14px;
   line-height: 24px;
   color: var(--text-muted);
@@ -344,11 +347,11 @@ body {
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 12px;
+  gap: 8.5px 10.5px;
 }
 
 .tag {
-  padding: 5px 14px;
+  padding: 4px 13px;
   border: 1px solid var(--input-bg);
   border-radius: 999px;
   background-color: var(--bg-page);
