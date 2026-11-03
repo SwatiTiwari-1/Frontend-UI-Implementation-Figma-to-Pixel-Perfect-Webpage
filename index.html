@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <script>
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  </script>
+
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -57,7 +62,7 @@
       <img class="hero-illustration"
            src="assets/images/hero.png"
            alt="A developer sitting on a desk next to a monitor that shows code"
-           width="808" height="561">
+           width="808" height="551">
 
       <!-- Decorative floating shapes -->
       <span class="shape shape-ring shape-ring--yellow-tl" aria-hidden="true"></span>
@@ -195,7 +200,6 @@
               <p class="review-text">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec Amet....</p>
               <footer class="review-author">
                 <img class="review-avatar" src="assets/profileimages/talanprofile.png"
-                "
                      alt="Portrait of Talan Westervelt" width="80" height="80" loading="lazy">
                 <div>
                   <p class="review-name">Talan Westervelt</p>
@@ -370,13 +374,15 @@
   </section>
 
   <section class="partners" aria-label="Partners">
+    <div class="section-container">
       <ul class="partner-list">
         <li><img src="assets/partnerlogos/3 eerrate.png" alt="3 eerrate" width="140" height="144"></li>
         <li><img src="assets/partnerlogos/GL.png" alt="GL" width="140" height="144"></li>
         <li><img src="assets/partnerlogos/GenraTe.png" alt="Genrate" width="140" height="144"></li>
         <li><img src="assets/partnerlogos/Generate.png" alt="Generate" width="140" height="144"></li>
       </ul>
-    </section>
+    </div>
+  </section>
   </main>
 
   <footer class="site-footer">

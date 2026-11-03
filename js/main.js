@@ -1,5 +1,27 @@
 'use strict';
 
+const resetScrollPosition = () => {
+  const forceTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
+  forceTop();
+  requestAnimationFrame(forceTop);
+  setTimeout(forceTop, 0);
+};
+
+history.scrollRestoration = 'manual';
+window.addEventListener('load', () => {
+  resetScrollPosition();
+  setTimeout(resetScrollPosition, 50);
+}, { once: true });
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) resetScrollPosition();
+});
+resetScrollPosition();
+
 /* ==========================================================
    Navbar: mobile menu toggle
    ========================================================== */

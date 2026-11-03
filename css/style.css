@@ -2,7 +2,7 @@
 :root {
   /* Colors */
   --primary-accent: #FFB400;
-  --bg-page: #F7F8FA;
+  --bg-page: #F0F0F6;
   --bg-card: #FFFFFF;
   --text-primary: #2B2B2B;
   --text-muted: #767676;
@@ -110,7 +110,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 629px;
+  min-height: 630px;
   padding: 8px 0 0 98px;
   overflow: hidden;
   background-color: var(--bg-card);
@@ -255,7 +255,7 @@ body {
 
 /* ===== Shared section layout ===== */
 .section-container {
-  width: min(1244px, 100% - 48px); /* 98px side margins at 1440px */
+  width: min(1244px, calc(100% - 48px));
   margin-inline: auto;
 }
 
@@ -280,7 +280,7 @@ body {
 
 /* ===== Projects ===== */
 .projects {
-  padding-top: 62px; /* hero bottom -> heading */
+  padding-top: 61px; /* hero bottom -> heading */
 }
 
 .projects .section-header {
@@ -403,7 +403,6 @@ body {
 .reviews {
   margin-top: 44px;
   overflow: hidden;
-  background-color: var(--b g-card);
 }
  
 .reviews-track {
@@ -418,6 +417,7 @@ body {
 .review {
   flex: 0 0 min(341px, 100vw - 96px);
   padding: 24px 27px 25px;
+  background-color: var(--bg-card);
 }
  
 /* 5 gold stars drawn with a repeating SVG tile (30px pitch) */
@@ -625,36 +625,6 @@ body {
   color: var(--text-primary);
 }
 
-/* ----- Partners row ----- */
-.partners {
-  padding: 22px 0 32px;
-}
-
-.partner-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 28px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.partner-list li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 140px;
-}
-
-.partner-list img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
 /* ----- Info cards ----- */
 .contact-cards {
   display: flex;
@@ -755,7 +725,7 @@ body {
 /* ===== Partner strip ===== */
 .partners {
   margin-top: 56px; /* contact section -> partner strip */
-  background-color: var(--bg-card);
+  background-color: var(--bg-page);
 }
 
 .partner-list,
@@ -865,9 +835,9 @@ body {
 
 /* Copyright strip */
 .footer-bottom {
-  height: 76px;
-  padding-top: 16px;
-  background-color: var(--bg-card);
+  height: 71px;
+  padding-top: 12px;
+  background-color: var(--bg-page);
 }
 
 .copyright {
@@ -889,7 +859,6 @@ body {
   .partner-list {
     flex-wrap: wrap;
     gap: 0 24px;
-    padding-inline: 24px;
   }
 
   .partner-list li:nth-child(n) {
