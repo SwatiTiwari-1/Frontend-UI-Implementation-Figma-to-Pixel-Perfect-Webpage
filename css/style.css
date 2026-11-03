@@ -410,7 +410,7 @@ body {
  
 .reviews-track {
   display: flex;
-  gap: 24px;
+  gap: 23px;
 }
  
 .reviews-track.is-ready {
@@ -419,7 +419,7 @@ body {
  
 .review {
   flex: 0 0 min(341px, 100vw - 96px);
-  padding: 24px 27px 25px;
+  padding: 24px 30px 24px 19px;
   background-color: var(--bg-card);
 }
  
@@ -440,7 +440,7 @@ body {
 }
  
 .review-text {
-  margin-bottom: 26px;
+  margin-bottom: 25px;
   font-size: 15px;
   line-height: 24px;
   color: var(--text-muted);
@@ -449,12 +449,12 @@ body {
 .review-author {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 29px;
 }
  
 .review-avatar {
   flex-shrink: 0;
-  width: 80px;
+  width: 90px;
   height: 80px;
   border-radius: var(--radius-round);
   object-fit: cover;
@@ -462,6 +462,7 @@ body {
 }
  
 .review-name {
+  margin-top: 6px;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -470,6 +471,7 @@ body {
  
 .review-role {
   margin-top: 3px;
+  margin-left: 4px;
   font-size: 15px;
   line-height: 24px;
   color: var(--text-muted);
