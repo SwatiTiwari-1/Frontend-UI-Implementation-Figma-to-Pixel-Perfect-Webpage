@@ -601,7 +601,7 @@ body {
   padding: 0 21px;
   border-radius: var(--radius-sm);
   background-color: var(--primary-accent);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   color: #000000;
@@ -635,7 +635,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 18px;
+  gap: 12.74px;
 }
 
 .contact-card {
@@ -648,8 +648,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 40.29px;
+  height: 40.21px;
   margin: 0 auto 31px;
   border-radius: var(--radius-round);
   background-color: var(--primary-accent);
@@ -659,8 +659,8 @@ body {
 
 .contact-badge img {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18.13px;
+  height: 18.1px;
   object-fit: contain;
   border-radius: 0;
 }
@@ -786,18 +786,18 @@ body {
 
 .rating figcaption {
   font-size: 12px;
-  line-height: 18px;
+  line-height: 28px;
   color: var(--text-muted);
 }
 
-.rating-list li:nth-child(2) { margin-top: 23px; }
-.rating-list li:nth-child(3) { margin-top: 26px; }
+.rating-list li:nth-child(2) { margin-top: 13px; }
+.rating-list li:nth-child(3) { margin-top: 16px; }
 
 /* Column headings + link lists */
 .footer-heading {
   font-size: 20px;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 37px;
   color: #000000;
 }
 
@@ -851,7 +851,7 @@ body {
   justify-content: center;
   gap: 12px;
   font-size: 15px;
-  line-height: 24px;
+  line-height: 27px;
   color: var(--text-muted);
 }
 
